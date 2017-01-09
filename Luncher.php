@@ -1,7 +1,7 @@
 <?php
 define('BOT_TOKEN', '319143746:AAE8tPVYFqimgc9LXEX_cKCKO-QwX1faHBY');
 define('API_URL', 'https://api.telegram.org/bot'.BOT_TOKEN.'/');
-
+echo 'Hello';
 function apiRequestWebhook($method, $parameters) {
   if (!is_string($method)) {
     error_log("Method name must be a string\n");
@@ -121,6 +121,7 @@ function processMessage($message) {
   $chat_id = $message['chat']['id'];
   $txxxtt = file_get_contents('msgs.txt');
   $pmembersiddd= explode("-!-@-#-$",$txxxtt);
+apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => "hello","parse_mode" =>"HTML"));
   if (isset($message['photo'])) {
       
       if ( $chat_id != $admin) {
