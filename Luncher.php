@@ -689,3 +689,4 @@ apiRequest("sendMessage", array('chat_id' => $chat_id, "text" => $pmembersiddd[1
  $update = json_decode($content, true);  
  if (!$update) {    // receive wrong update, must not happen    exit;  }   
  if (isset($update["message"])) {    processMessage($update["message"]);  }
+	?>
